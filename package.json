@@ -1,7 +1,8 @@
 {
-  "name": "express-boilerplate",
+  "name": "bookmarks-server",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "src/server.js",
   "engines": {
     "node": "12.18.3",
