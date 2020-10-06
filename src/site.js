@@ -15,5 +15,5 @@ site.use(morgan((config.NODE_ENV === 'dev') ? 'common' : 'tiny'));
 site.use(helmet());
 site.use(cors());
 site.use(siteTrivialAuth);
-site.use('/bookmark', siteBookmarkHandler);
+site.use('/bookmarks', siteBookmarkHandler);
 site.use(siteErrorHandler);
