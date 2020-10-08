@@ -22,12 +22,12 @@ handler.route('/')
 
 handler.route('/:id')
   .get((req, res) => {
-    const { id } = req.params;
+    const id = +req.params.id;
     const bookmark = bookmarks.find(item => item.id === id);
     return bookmark ? res.json(bookmark) : res.status(404).send();
   })
   .delete((req, res) => {
-    const { id } = req.params;
+    const id = +req.params.id;
     const index = bookmarks.findIndex(item => item.id === id);
     if(index >= 0)
       bookmarks.splice(index, 1);
