@@ -7,7 +7,7 @@ module.exports = handler;
 
 handler.route('/')
   .get((req, res) => res.json(bookmarks))
-  .post((req, res) => {
+  .post(express.json(), (req, res) => {
     const bookmark = normalizeObject({
       title: title => typeof(title) === 'string' && title.length > 0,
       url: url => typeof(url) === 'string' && url.startsWith('http'),
