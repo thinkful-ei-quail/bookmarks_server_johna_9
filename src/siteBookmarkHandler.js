@@ -11,8 +11,8 @@ handler.route('/')
     const bookmark = normalizeObject({
       title: title => typeof(title) === 'string' && title.length > 0,
       url: url => typeof(url) === 'string' && url.startsWith('http'),
-      description: desc => (desc === null) || (desc === undefined) || (typeof(desc) === 'string'),
-      rating: rating => (rating === null) || (rating === undefined) || ((rating >= 0) && (rating <= 5))
+      description: desc => (typeof(desc) === 'string'),
+      rating: rating => ((rating >= 0) && (rating <= 5))
     }, req.body);
     bookmark.id = bookmarks.nextId++;
     bookmarks.push(bookmark);
